@@ -1,5 +1,5 @@
 {
-  "name": "react-native-draftjs-render",
+  "name": "@mtb-bank/react-native-draftjs-render",
   "description": "React Native render for draft.js model",
   "version": "2.9.0-1",
   "scripts": {
@@ -67,12 +67,15 @@
       "src/**/*.{js,jsx}"
     ]
   },
+  "bugs": {
+    "url": "https://github.com/mtb-bank/react-native-draftjs-render/issues"
+  },
+  "homepage": "https://github.com/mtb-bank/react-native-draftjs-render#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/globocom/react-native-draftjs-render.git"
+    "url": "git+https://github.com/mtb-bank/react-native-draftjs-render.git"
   },
-  "bugs": {
-    "url": "https://github.com/globocom/react-native-draftjs-render/issues"
-  },
-  "homepage": "https://github.com/globocom/react-native-draftjs-render#readme"
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/mtb-bank"
+  }
 }

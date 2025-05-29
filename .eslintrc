@@ -8,6 +8,7 @@
   },
   "extends": "airbnb",
   "rules": {
+    "quotes": 0,
     "import/extensions": [2, "never", { "json": "always" }],
     "no-duplicate-imports": 0,
     "no-underscore-dangle": 0,

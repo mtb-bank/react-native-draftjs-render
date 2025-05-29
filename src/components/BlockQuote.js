@@ -56,9 +56,4 @@ const BlockQuote = (props: BlockQuotePropsType): any => {
   );
 };
 
-BlockQuote.defaultProps = {
-  customStyles: undefined,
-  type: '',
-};
-
 export default BlockQuote;

@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
 });
 
 const UnorderedListItem = (props: UnorderedListItemPropsType): any => {
-  const { customStyles, depth, defaultMarginLeft } = props;
+  const { customStyles, defaultMarginLeft = 8, depth = 0 } = props;
   const unorderedListItemCustomStyleContainer = customStyles
     ? customStyles.unorderedListItemContainer
     : undefined;
@@ -56,11 +56,6 @@ const UnorderedListItem = (props: UnorderedListItemPropsType): any => {
       />
     </View>
   );
-};
-
-UnorderedListItem.defaultProps = {
-  defaultMarginLeft: 8,
-  depth: 0,
 };
 
 export default UnorderedListItem;

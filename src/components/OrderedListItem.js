@@ -31,11 +31,11 @@ const styles = StyleSheet.create({
 
 const OrderedListItem = (props: OrderedListItemPropsType): any => {
   const {
-    counter,
-    separator,
+    counter = 1,
+    separator = '.',
     customStyles,
-    depth,
-    defaultMarginLeft,
+    depth = 0,
+    defaultMarginLeft = 8,
   } = props;
 
   const orderedListItemCustomStyleContainer = customStyles && customStyles.orderedListItemContainer;
@@ -61,13 +61,6 @@ const OrderedListItem = (props: OrderedListItemPropsType): any => {
       />
     </View>
   );
-};
-
-OrderedListItem.defaultProps = {
-  counter: 1,
-  depth: 0,
-  separator: '.',
-  defaultMarginLeft: 8,
 };
 
 export default OrderedListItem;

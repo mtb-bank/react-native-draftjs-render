@@ -48,3 +48,4 @@ jsconfig.json
 
 #Custom
 .history
+.vscode

@@ -15,41 +15,43 @@ import defaultStyles from './defaultStyles';
 import type { DraftJsTextPropsType } from './types';
 
 const DraftJsText = (props: DraftJsTextPropsType): any => {
-  const { text } = props;
+  const {
+    text = "",
+    data = {},
+    inlineStyles = [],
+    customStyles,
+    type = "",
+  } = props;
   let textElements = text;
 
   if (textElements) {
     textElements = loadAttributes({
-      text: props.text,
-      customStyles: props.customStyles,
-      inlineStyles: props.inlineStyles,
+      text,
+      customStyles,
+      inlineStyles,
       entityRanges: props.entityRanges,
       entityMap: props.entityMap,
       navigate: props.navigate,
       textProps: props.textProps,
-      type: props.type,
+      type,
     });
 
-    const customStyle = props.customStyles ? props.customStyles[props.type] : undefined;
-    const textAlignStyle = { textAlign: props.data.textAlignment };
+    const customStyle = customStyles ? customStyles[type] : undefined;
+    const textAlignStyle = { textAlign: data.textAlignment };
 
     return (
       <Text
-        style={[defaultStyles[props.type], textAlignStyle, customStyle]}
+        style={[defaultStyles[type], textAlignStyle, customStyle]}
         {...props.textProps}
       >
         {textElements}
       </Text>
     );
   }
-  return <Text style={props?.customStyles.emptyText} />;
-};
 
-DraftJsText.defaultProps = {
-  text: '',
-  data: {},
-  inlineStyles: [],
-  navigate: undefined,
+  const emptyTextStyle = customStyles ? customStyles.emptyText : undefined;
+
+  return <Text style={emptyTextStyle} />;
 };
 
 export default DraftJsText;

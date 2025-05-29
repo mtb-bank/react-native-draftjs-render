@@ -46,7 +46,7 @@ const getStyles = (itemType: any, customStyles?: Object): any => {
 
 const TextStyled = (props: TextStyledPropsType): any => {
   const {
-    type,
+    type = "",
     customStyles,
     onPress,
     lineHeight,
@@ -58,11 +58,6 @@ const TextStyled = (props: TextStyledPropsType): any => {
     return <Text style={[textStyle, lineHeight]} onPress={onPress}>{text}</Text>;
   }
   return <Text style={[textStyle, lineHeight]}>{text}</Text>;
-};
-
-TextStyled.defaultProps = {
-  text: '',
-  onPress: undefined,
 };
 
 export default TextStyled;

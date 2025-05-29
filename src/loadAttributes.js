@@ -86,7 +86,6 @@ const loadAttributes = (params: ParamsType): any => {
 
       const itemType = getItemType(item);
       const itemData = Object.assign({}, {
-        key: generateKey(),
         type: itemType,
         text: substring(text, item.offset, item.offset + item.length),
         customStyles,
@@ -98,7 +97,7 @@ const loadAttributes = (params: ParamsType): any => {
       if (itemOnPress !== undefined) Object.assign(itemData, { onPress: itemOnPress });
 
       elementList.push((
-        <TextStyled {...itemData} />
+        <TextStyled key={generateKey()} {...itemData} />
       ));
     });
 

@@ -98,7 +98,6 @@ const getBlocks = (params: ParamsType): ?Array<React$Element<*>> => {
   return contentState.blocks
     .map((item: Object): React$Element<*> => {
       const itemData = {
-        key: item.key,
         text: item.text,
         type: item.type,
         data: item.data,
@@ -122,6 +121,7 @@ const getBlocks = (params: ParamsType): ?Array<React$Element<*>> => {
             <View key={generateKey()}>
               {viewBefore}
               <DraftJsText
+                key={item.key}
                 {...itemData}
                 entityMap={contentState.entityMap}
                 customStyles={customStyles}
@@ -156,6 +156,7 @@ const getBlocks = (params: ParamsType): ?Array<React$Element<*>> => {
             <View key={generateKey()}>
               {viewBefore}
               <BlockQuote
+                key={item.key}
                 {...itemData}
                 entityMap={contentState.entityMap}
                 customStyles={customStyles}
@@ -174,6 +175,7 @@ const getBlocks = (params: ParamsType): ?Array<React$Element<*>> => {
             <View key={generateKey()}>
               {viewBefore}
               <UnorderedListItem
+                key={item.key}
                 {...itemData}
                 entityMap={contentState.entityMap}
                 customStyles={customStyles}
@@ -211,6 +213,7 @@ const getBlocks = (params: ParamsType): ?Array<React$Element<*>> => {
             <View key={generateKey()}>
               {viewBefore}
               <OrderedListItem
+                key={item.key}
                 {...itemData}
                 separator={orderedListSeparator}
                 counter={number}
